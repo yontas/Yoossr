@@ -25,11 +25,11 @@ function getThemeSnapshot(): ThemeMode {
   } catch {
 
   }
-  return 'dark';
+  return 'light';
 }
 
 function getThemeServerSnapshot(): ThemeMode {
-  return 'dark';
+  return 'light';
 }
 
 export function saveThemeMode(nextMode: ThemeMode): void {

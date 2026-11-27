@@ -1,5 +1,19 @@
 import type { Metadata, Viewport } from 'next';
+import { IBM_Plex_Mono, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+
+const fontSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-jakarta',
+});
+
+const fontMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-plex-mono',
+});
 
 function resolveAppUrl(): string {
   const candidate =
@@ -102,7 +116,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className="dark" suppressHydrationWarning>
+    <html lang="id" className={`${fontSans.variable} ${fontMono.variable}`}
+      suppressHydrationWarning>
       <body
         className="font-sans antialiased bg-white text-zinc-950 dark:bg-[#09090B] dark:text-zinc-100 selection:bg-zinc-900 selection:text-white dark:selection:bg-zinc-100 dark:selection:text-zinc-950"
         suppressHydrationWarning
